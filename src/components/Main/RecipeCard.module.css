@@ -1,11 +1,10 @@
 .card-link {
-    text-decoration: none;  /* Remove the underline */
-    color: inherit; /* Inherit the color to keep it consistent */
-    display: block; /* the link takes full width of its container */
+    text-decoration: none; 
+    color: inherit; 
+    display: block;
 }
 
 .card {
-    /* if a single card is on screen, to not be strecthed set a max width if its a single or few cards with alot of space */
     width: 300px;
     max-width: 400px;
     height: auto;
@@ -21,7 +20,7 @@
     justify-content: space-between;
     /* center the few cards if alot of space exists */
     margin: auto;
-    padding: .4em 1em;
+    padding: .6em;
 }
 
 .card:hover {

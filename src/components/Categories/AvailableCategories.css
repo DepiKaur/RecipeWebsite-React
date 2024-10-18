@@ -1,12 +1,11 @@
 .nav-list {
-
     margin: 0;
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    gap: 0.5rem;
 }
 
 .category {
@@ -16,42 +15,45 @@
     background-color: #E63946;
     color: #fff;
     border-radius: 25px;
-    font-size: 1.2em;
-    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.421);
+    /* minumum, preferred and maximum for font size for different screen sizes and widths :) */
+    font-size: clamp(1rem, 1.2vw, 1.2em); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s;
-    
+    transition: background-color 0.3s ease, transform 0.1s, box-shadow 0.3s ease; 
 }
 
-/* button activated for a selected category */
-
-.activated-button {
-    background-color: var(--activated-red-button);
-    color: var(--white-color);
-    border-color: var(--activated-red-button);
-    transform: translateY(3px);
-}
-
-
-  
 .category:hover {
     background-color: #D62839;
-    transform: translateY(-2px);
-}  
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
 
+.category:active {
+     background-color: var(--activated-red-button);
+    color: var(--white-color);
+    border-color: var(--activated-red-button);
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s ease, transform 0.1s, box-shadow 0.3s ease; 
+}
+
+
+/* Responsive adjustments for smaller screens */
 @media only screen and (max-width: 600px) {
     .nav-list {
         align-items: center;
+        gap: 0.3rem; 
     }
 
     .category {
-        font-size: 1.2em; 
-        padding: 8px; 
+        font-size: clamp(1rem, 3vw, 1.2em); 
+        padding: 10px 20px; 
         width: 100%; 
         text-align: center;
     }
-    
+
     .category:hover {
         transform: none; 
+        box-shadow: none; 
     }
 }

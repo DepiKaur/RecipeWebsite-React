@@ -3,12 +3,13 @@
 }
 
 .landing-main>h2 {
-
+    color: #405f60;
     font-size: 2rem;
     background-color: #FFDDD2;
     padding: 0 0 0.5rem 0;
     margin: 0;
     text-align: center;
+    text-shadow: 5px 5px 0px #3a757326;
 }
 
 .landing-main>p {

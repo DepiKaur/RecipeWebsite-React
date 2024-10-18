@@ -6,7 +6,7 @@ export default function Main(props) {
     return (
         <main className="landing-main">
             <h2>Populära Bakverk</h2>
-            {numberOfRecipes > 0 && <p>(Visar {numberOfRecipes} recept)</p>}
+            {numberOfRecipes > 0 && <p>(hitta {numberOfRecipes} recept)</p>}
             <div className='card-container'>
                 <AvailableRecipes availableRecipes={props.recipes} />
             </div>
