@@ -16,6 +16,7 @@ body {
     align-items: center;
     height: 100vh;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .container {
@@ -26,6 +27,7 @@ body {
     max-width: 500px;
     width: 100%;
     border: solid 1rem #A8DADC;
+    position: relative;
 }
 
 .form {
@@ -133,15 +135,19 @@ button:active {
     }
 
     .main {
-        padding: .8rem;
+        padding: 0.8rem;
+        justify-content: flex-start;
     }
+
     .container {
         padding: 1rem;
         width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
     }
 
     .main h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
     }
 
@@ -165,6 +171,6 @@ button:active {
     }
 
     .message p {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 }
