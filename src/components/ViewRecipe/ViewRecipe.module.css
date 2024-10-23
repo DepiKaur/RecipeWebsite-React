@@ -9,6 +9,9 @@
     height: auto;
     overflow-x: hidden;
 }
+* {
+    box-shadow: none !important;
+}
 
 .container {
     background-color: #fff;

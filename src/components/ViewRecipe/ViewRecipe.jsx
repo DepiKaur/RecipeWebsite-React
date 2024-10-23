@@ -21,18 +21,20 @@ export default function ViewRecipe() {
 
     const params = useParams();
 
-
     const ref = useRef();
 
     function downloadPDF() {
-  
+
+
         const input = ref.current;
 
-        html2canvas(input,{
-            useCORS: true
+        html2canvas(input, {
+            useCORS: true,
+            allowTaint: false,
+
         }).then(canvas => {
-         
-            const imgData = canvas.toDataURL("image/png")
+
+            const imgData = canvas.toDataURL("image/jpg")
             const psf = new jsPDF('p', 'mm', 'a4', true)
             const pdfWidth = psf.internal.pageSize.getWidth()
             const pdfHeight = psf.internal.pageSize.getHeight()
@@ -41,12 +43,12 @@ export default function ViewRecipe() {
             const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
             const imgX = (pdfWidth - imgWidth * ratio) / 2
             const imgY = 30
-            psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.addImage(imgData, 'jpg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
             psf.save(`${desiredRecipe.title}.pdf`)
 
 
         })
-   
+
     }
 
     // getting recipe by Id
